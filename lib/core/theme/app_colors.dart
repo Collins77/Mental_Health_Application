@@ -6,4 +6,5 @@ class AppColors {
   static const Color mentalBrandColor = Color(0xFF8771B6);
   static const Color mentalBrandLightColor = Color(0xFFF6F4FB);
   static const Color mentalOnboardTextColor = Color(0xFFDAD1EC);
+  static const Color mentalDarkThemeColor = Color(0xFF211D2C);
 }

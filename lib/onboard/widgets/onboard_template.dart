@@ -6,7 +6,17 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardTemplate extends StatelessWidget {
   final PageController pageController;
-  const OnboardTemplate({Key? key, required this.pageController})
+  final String image;
+  final String subTitle1;
+  final String subTitle2;
+  final String buttonText;
+  const OnboardTemplate(
+      {Key? key,
+      required this.pageController,
+      required this.image,
+      required this.buttonText,
+      required this.subTitle1,
+      required this.subTitle2})
       : super(key: key);
 
   @override
@@ -36,7 +46,7 @@ class OnboardTemplate extends StatelessWidget {
             height: 350.0,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(BrandImages.kOnboardScreen1Img),
+                image: AssetImage(image),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(10.0),
@@ -58,7 +68,7 @@ class OnboardTemplate extends StatelessWidget {
               padding: const EdgeInsets.only(right: 128.0, top: 34.0),
               child: RichText(
                 text: TextSpan(
-                  text: CustomText.onboardScreenText1,
+                  text: subTitle1,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22.0,
@@ -66,7 +76,7 @@ class OnboardTemplate extends StatelessWidget {
                   ),
                   children: [
                     TextSpan(
-                      text: CustomText.onboardScreenText2,
+                      text: subTitle2,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22.0,
@@ -93,8 +103,8 @@ class OnboardTemplate extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                CustomText.onboardScreenBtn1,
-                textAlign: TextAlign.right,
+                buttonText,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 20.0,

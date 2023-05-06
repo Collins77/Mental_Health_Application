@@ -25,9 +25,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: PageView(
             controller: _controller.pageController,
         children: [
-          OnboardTemplate(pageController: _controller.pageController,),
-          OnboardTemplate(pageController: _controller.pageController,),
-          OnboardTemplate(pageController: _controller.pageController,),
+          OnboardTemplate(
+            pageController: _controller.pageController,
+            image: BrandImages.kOnboardScreen1Img,
+            subTitle1: CustomText.onboardScreenText1,
+            subTitle2: CustomText.onboardScreenText2,
+            buttonText: CustomText.onboardScreenBtn1,
+          ),
+          OnboardTemplate(
+            pageController: _controller.pageController,
+            image: BrandImages.kOnboardScreen2Img,
+            subTitle1: CustomText.onboardScreen2Text1,
+            subTitle2: CustomText.onboardScreen2Text2,
+            buttonText: CustomText.onboardScreenBtn2,
+          
+          ),
+          OnboardTemplate(
+            pageController: _controller.pageController,
+            image: BrandImages.kOnboardScreen3Img,
+            subTitle1: CustomText.onboardScreen3Text1,
+            subTitle2: CustomText.onboardScreen3Text2,
+            buttonText: CustomText.onboardScreenBtn2,
+            
+          ),
           // OnboardTemplate(pageController: _controller.pageController,),
         ],
       )),

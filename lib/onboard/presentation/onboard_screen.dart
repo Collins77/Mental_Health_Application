@@ -1,50 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
+import 'package:mental_health_app/core/theme/brand_images.dart';
 import 'package:mental_health_app/core/theme/custom_texts.dart';
+import 'package:mental_health_app/onboard/application/onboard_controller.dart';
+import 'package:mental_health_app/onboard/widgets/onboard_template.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key:key);
+  const OnboardingScreen({Key? key}) : super(key: key);
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState(); 
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+  OnboardingController _controller = Get.put(OnboardingController());
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.mentalBrandLightColor,
       body: SafeArea(
-        child: PageView(
+          child: PageView(
+            controller: _controller.pageController,
         children: [
-          Container(
-            padding: EdgeInsets.all(18.0),
-          child: 
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(CustomText.skipText,
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 20.0,
-                    color: AppColors.mentalDarkColor,
-                  ),)
-                ],
-              ),
-            ],
-          ),),
-          Container(color: Colors.red,),
-          Container(color: Colors.blue,),
-          Container(color: Colors.green,),
+          OnboardTemplate(pageController: _controller.pageController,),
+          OnboardTemplate(pageController: _controller.pageController,),
+          OnboardTemplate(pageController: _controller.pageController,),
+          // OnboardTemplate(pageController: _controller.pageController,),
         ],
-      )
-      ),
+      )),
     );
   }
-
-
 }

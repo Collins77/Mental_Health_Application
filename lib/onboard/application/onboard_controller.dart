@@ -15,4 +15,15 @@ class OnboardingController extends GetxController {
     pageController.dispose();
     super.onClose();
   }
+
+  void nextPage() {
+    if (pageController.page == 2) {
+      Get.offAllNamed('/login');
+    } else {
+      pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    }
+  }
 }

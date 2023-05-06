@@ -10,13 +10,15 @@ class OnboardTemplate extends StatelessWidget {
   final String subTitle1;
   final String subTitle2;
   final String buttonText;
+  final VoidCallback onPressed;
   const OnboardTemplate(
       {Key? key,
       required this.pageController,
       required this.image,
       required this.buttonText,
       required this.subTitle1,
-      required this.subTitle2})
+      required this.subTitle2,
+      required this.onPressed})
       : super(key: key);
 
   @override
@@ -62,7 +64,13 @@ class OnboardTemplate extends StatelessWidget {
                 dotWidth: 10.0,
                 dotHeight: 10.0,
                 activeDotColor: AppColors.mentalBrandColor),
-            onDotClicked: (index) {},
+            onDotClicked: (index) {
+              pageController.animateToPage(
+                  index,
+                  duration: Duration(milliseconds: 300), 
+                  curve: Curves.easeIn,
+                );
+            },
           ),
           Padding(
               padding: const EdgeInsets.only(right: 128.0, top: 34.0),
@@ -89,26 +97,29 @@ class OnboardTemplate extends StatelessWidget {
           SizedBox(
             height: 60.0,
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.only(
-              top: 18.0,
-              left: 18.0,
-              right: 18.0,
-              bottom: 18.0,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
-              color: AppColors.mentalBrandColor,
-            ),
-            child: Center(
-              child: Text(
-                buttonText,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 20.0,
-                  color: AppColors.mentalBrandLightColor,
+          GestureDetector(
+            onTap: onPressed,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.only(
+                top: 18.0,
+                left: 18.0,
+                right: 18.0,
+                bottom: 18.0,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                color: AppColors.mentalBrandColor,
+              ),
+              child: Center(
+                child: Text(
+                  buttonText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 20.0,
+                    color: AppColors.mentalBrandLightColor,
+                  ),
                 ),
               ),
             ),

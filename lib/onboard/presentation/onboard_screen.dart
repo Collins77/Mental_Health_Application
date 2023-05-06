@@ -32,6 +32,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             subTitle2: CustomText.onboardScreenText2,
             buttonText: CustomText.onboardScreenBtn1,
             onPressed: _controller.nextPage,
+            skipBtnPressed: () => Get.offAllNamed('/login'),
           ),
           OnboardTemplate(
             pageController: _controller.pageController,
@@ -40,6 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             subTitle2: CustomText.onboardScreen2Text2,
             buttonText: CustomText.onboardScreenBtn2,
             onPressed: _controller.nextPage,
+            skipBtnPressed: () => Get.offAllNamed('/login'),
           ),
           OnboardTemplate(
             pageController: _controller.pageController,
@@ -48,6 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             subTitle2: CustomText.onboardScreen3Text2,
             buttonText: CustomText.onboardScreenBtn2,
             onPressed: _controller.nextPage,
+            skipBtnPressed: () => Get.offAllNamed('/login'),
           ),
         ],
       )),

@@ -11,15 +11,17 @@ class OnboardTemplate extends StatelessWidget {
   final String subTitle2;
   final String buttonText;
   final VoidCallback onPressed;
-  const OnboardTemplate(
-      {Key? key,
-      required this.pageController,
-      required this.image,
-      required this.buttonText,
-      required this.subTitle1,
-      required this.subTitle2,
-      required this.onPressed})
-      : super(key: key);
+  final VoidCallback skipBtnPressed;
+  const OnboardTemplate({
+    Key? key,
+    required this.pageController,
+    required this.image,
+    required this.buttonText,
+    required this.subTitle1,
+    required this.subTitle2,
+    required this.onPressed, 
+    required this.skipBtnPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +32,17 @@ class OnboardTemplate extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
-                CustomText.skipText,
-                textAlign: TextAlign.right,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 20.0,
-                  color: AppColors.mentalDarkColor,
-                ),
-              )
+              GestureDetector(
+                  onTap: skipBtnPressed,
+                  child: Text(
+                    CustomText.skipText,
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20.0,
+                      color: AppColors.mentalDarkColor,
+                    ),
+                  )),
             ],
           ),
           SizedBox(
@@ -66,10 +70,10 @@ class OnboardTemplate extends StatelessWidget {
                 activeDotColor: AppColors.mentalBrandColor),
             onDotClicked: (index) {
               pageController.animateToPage(
-                  index,
-                  duration: Duration(milliseconds: 300), 
-                  curve: Curves.easeIn,
-                );
+                index,
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeIn,
+              );
             },
           ),
           Padding(

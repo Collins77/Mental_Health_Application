@@ -16,7 +16,8 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
       body: SafeArea(
           child: Center(
         child: Text('AuthLoginScreen'),
-      )),
+      ),
+      ),
     );
   }
 }

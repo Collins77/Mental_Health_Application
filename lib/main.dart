@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:mental_health_app/core/theme/mental_health_theme.dart';
 import 'package:mental_health_app/launchscreen/presentation/welcome_screen.dart';
 import 'package:mental_health_app/routes/app_pages.dart';
 
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialBinding: MainBinding(),
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: mentalHealthThemeLight,
+      darkTheme: mentalHealthThemeDark,
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

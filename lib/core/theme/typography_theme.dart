@@ -6,49 +6,49 @@ import 'package:mental_health_app/core/theme/app_colors.dart';
 TextTheme mentalHealthTextThemeDark(TextTheme base) {
   return base
   .copyWith(
-    displayMedium: base.displayMedium!.copyWith(
+    headline1: base.headline1!.copyWith(
       fontSize: 34.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w400,
     ),
-    displaySmall: base.displaySmall!.copyWith(
+    headline2: base.headline2!.copyWith(
       fontSize: 27.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w300,
     ),
-    headlineMedium: base.headlineMedium!.copyWith(
+    headline3: base.headline3!.copyWith(
       fontSize: 20.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w300,
     ),
-    headlineSmall: base.headlineSmall!.copyWith(
+    headline4: base.headline4!.copyWith(
       fontSize: 17.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w300,
     ),
-    titleSmall: base.titleSmall!.copyWith(
+    subtitle1: base.subtitle1!.copyWith(
       fontSize: 17.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w300,
     ),
-    bodyMedium: base.bodyMedium!.copyWith(
+    bodyText1: base.bodyText1!.copyWith(
       fontSize: 15.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w300,
     ),
-    labelSmall: base.labelSmall!.copyWith(
+    button: base.button!.copyWith(
       fontSize: 13.0,
       height: 1.2,
       fontFamily: 'Inter',
       fontWeight: FontWeight.w200,
     ),
-    bodySmall: base.bodySmall!.copyWith(
+    caption: base.caption!.copyWith(
       fontSize: 11.0,
       height: 1.2,
       fontFamily: 'Inter',
@@ -118,12 +118,7 @@ TextTheme mentalHealthTextThemeLight(TextTheme base) {
       fontFamily: 'Inter',
       fontWeight: FontWeight.w200,
     ),
-    overline: base.overline!.copyWith(
-      fontSize: 11.0,
-      height: 1.2,
-      fontFamily: 'Inter',
-      fontWeight: FontWeight.w200,
-    ),
+    
   )
   .apply(
     displayColor: AppColors.mentalDarkColor,

@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
 import 'package:mental_health_app/core/theme/typography_theme.dart';
 
+final ThemeData mentalHealthThemeDark = BuildDarkTheme();
+
 ThemeData BuildDarkTheme() {
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
@@ -18,7 +20,9 @@ ThemeData BuildDarkTheme() {
         color: AppColors.mentalDarkThemeColor,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppColors.mentalDarkThemeColor,
+        statusBarBrightness: Brightness.light,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarColor: AppColors.mentalBrandLightColor,
         statusBarIconBrightness: Brightness.light,
       ),
     ),
@@ -27,7 +31,7 @@ ThemeData BuildDarkTheme() {
     ),
     cardColor: AppColors.mentalDarkThemeColor,
     canvasColor: AppColors.mentalDarkThemeColor,
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     primaryColor: AppColors.mentalBrandColor,
     buttonTheme: ButtonThemeData(
       buttonColor: AppColors.mentalBrandColor,
@@ -49,6 +53,8 @@ ThemeData BuildDarkTheme() {
     ),
   );
 }
+
+final ThemeData mentalHealthThemeLight = buildLightTheme();
 
 ThemeData buildLightTheme() {
   TextStyle _buildTextStyle(Color color, {double size = 16.0}) {
@@ -75,7 +81,7 @@ ThemeData buildLightTheme() {
       labelStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
       helperStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
       hintStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
-      prefixStyle: _buildTextStyle(AppColors.mentalOnboardTextColor), 
+      prefixStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
     ),
     scaffoldBackgroundColor: AppColors.mentalBrandLightColor,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

@@ -37,14 +37,11 @@ class OnboardTemplate extends StatelessWidget {
                   child: Text(
                     CustomText.skipText,
                     textAlign: TextAlign.right,
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20.0,
-                      color: AppColors.mentalDarkColor,
+                    style: Theme.of(context).textTheme.headline3,
                     ),
-                  )),
-            ],
-          ),
+                  )
+                ],
+              ),
           SizedBox(
             height: 26.0,
           ),
@@ -89,10 +86,8 @@ class OnboardTemplate extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: subTitle2,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                      style: Theme.of(context).textTheme.headline3!.copyWith(
                         fontSize: 22.0,
-                        color: AppColors.mentalDarkColor,
                       ),
                     ),
                   ],

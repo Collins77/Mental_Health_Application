@@ -6,6 +6,15 @@ import 'package:mental_health_app/core/theme/typography_theme.dart';
 final ThemeData mentalHealthThemeDark = BuildDarkTheme();
 
 ThemeData BuildDarkTheme() {
+  TextStyle _builtTextStyle(Color color, {double size = 16.0}) {
+    return TextStyle(color: color, fontSize: size);
+  }
+UnderlineInputBorder _buildBorder(Color color) {
+    return UnderlineInputBorder(
+      borderSide: BorderSide(color: color),
+      borderRadius: BorderRadius.circular(8.0),
+    );
+  }
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
     scaffoldBackgroundColor: AppColors.mentalDarkThemeColor,
@@ -17,13 +26,13 @@ ThemeData BuildDarkTheme() {
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.mentalDarkThemeColor,
       iconTheme: IconThemeData(
-        color: AppColors.mentalDarkThemeColor,
+        color: AppColors.mentalBrandLightColor,
       ),
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
         systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarColor: AppColors.mentalBrandLightColor,
-        statusBarIconBrightness: Brightness.light,
+        statusBarColor: AppColors.mentalDarkThemeColor,
+        statusBarIconBrightness: Brightness.dark,
       ),
     ),
     iconTheme: IconThemeData(
@@ -100,7 +109,7 @@ ThemeData buildLightTheme() {
       ),
     ),
     iconTheme: IconThemeData(
-      color: AppColors.mentalBrandLightColor,
+      color: AppColors.mentalDarkColor,
     ),
     cardColor: AppColors.mentalBrandLightColor,
     canvasColor: AppColors.mentalBrandLightColor,
@@ -117,12 +126,12 @@ ThemeData buildLightTheme() {
     ),
     dialogBackgroundColor: AppColors.mentalBrandLightColor,
     textTheme: mentalHealthTextThemeDark(base.textTheme),
-    primaryTextTheme: Typography().white,
+    primaryTextTheme: Typography().black,
     colorScheme: ColorScheme.dark(
       primary: AppColors.mentalBrandColor,
       surface: AppColors.mentalBrandLightColor,
       background: AppColors.mentalBrandLightColor,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
     ),
   );
 }

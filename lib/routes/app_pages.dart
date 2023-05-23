@@ -18,7 +18,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.LOGIN, 
-      page: () => AuthLoginScreen()
+      page: () => AuthLoginScreen(),
     ),
   ];
 }

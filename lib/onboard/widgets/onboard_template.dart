@@ -88,6 +88,7 @@ class OnboardTemplate extends StatelessWidget {
                       text: subTitle2,
                       style: Theme.of(context).textTheme.headline3!.copyWith(
                         fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],

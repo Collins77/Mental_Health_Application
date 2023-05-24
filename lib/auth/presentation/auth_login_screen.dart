@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
+import 'package:mental_health_app/core/theme/brand_images.dart';
+import 'package:mental_health_app/core/theme/custom_texts.dart';
 import 'package:mental_health_app/uis/custom_buttons.dart';
 import 'package:mental_health_app/uis/custom_input_fields.dart';
 import 'package:mental_health_app/uis/custom_text.dart';
@@ -14,6 +16,23 @@ class AuthLoginScreen extends StatefulWidget {
 }
 
 class _AuthLoginScreenState extends State<AuthLoginScreen> {
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+
+  @override
+  void initState() {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -32,7 +51,7 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                 children: [
                   customSizedBox(context: context, size: 0.15),
                   mainHeading(
-                    text: 'Sign In',
+                    text: CustomText.mentalSignInText,
                     context: context,
                   ),
                   customSizedBox(context: context, size: 0.04),
@@ -40,22 +59,23 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                     child: Column(
                       children: [
                         CustomInputTextField(
+                          controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           obscureText: false,
                           validator: (String? value) {
                             if (value!.isEmpty) {
-                              return 'Please enter email';
+                              return CustomErrorText.invalidEmail;
                             }
                             return null;
                           },
                         ),
                         CustomInputPassword(
-                          // controller: _passwordController,
+                          controller: passwordController,
                           keyboardType: TextInputType.text,
                           obscuringCharacter: "*",
                           validator: (String? value) {
                             if (value!.isEmpty) {
-                              return "Please enter password";
+                              return CustomErrorText.invalidPassword;
                             }
                             return null;
                           },
@@ -67,7 +87,7 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                             GestureDetector(
                               onTap: () {},
                               child: Text(
-                                'Forgot password?',
+                                CustomText.mentalForgotPassword,
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
                                   fontSize: 13.0,
@@ -83,36 +103,40 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                         customSizedBox(context: context, size: 0.1),
                         CustomBtn(
                           onPressed: () => {},
-                          buttonText: 'Sign In',
+                          buttonText: CustomText.mentalSignInText,
                         ),
-                         customSizedBox(context: context, size: 0.13),
+                        customSizedBox(context: context, size: 0.13),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'or sign in with',
+                              CustomText.mentalSocialSignUpText,
                               style: TextStyle(
+                                fontSize: 15.0,
+                                height: 1.2,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w300,
                                 color: AppColors.mentalDarkColor,
                               ),
-                              ),
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomCirclerBtn(
-                                  imgName: 'icongoogle', 
-                                  onPressed: () => {}, 
-                                  redus: 20.0,
-                                  bagroundRadius: 22.0,
-                                ),
-                                CustomCirclerBtn(
-                                  imgName: 'iconfacebook', 
+                                  imgName: BrandImages.kGoogleIconName,
                                   onPressed: () => {},
                                   redus: 20.0,
                                   bagroundRadius: 22.0,
                                 ),
                                 CustomCirclerBtn(
-                                  imgName: 'iconapple', 
+                                  imgName: BrandImages.kFacebookIconName,
+                                  onPressed: () => {},
+                                  redus: 20.0,
+                                  bagroundRadius: 22.0,
+                                ),
+                                CustomCirclerBtn(
+                                  imgName: BrandImages.kAppleIconName,
                                   onPressed: () => {},
                                   redus: 20.0,
                                   bagroundRadius: 22.0,
@@ -126,7 +150,7 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Don\'t have an account?',
+                              CustomText.mentalSignInNoAcctText,
                               style: TextStyle(
                                 fontSize: 13.0,
                                 height: 1.2,
@@ -138,14 +162,14 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                             GestureDetector(
                               onTap: () {},
                               child: Text(
-                                'Sign up',
+                                CustomText.mentalSignUpText,
                                 style: TextStyle(
-                                fontSize: 13.0,
-                                height: 1.2,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.mentalBrandColor,
-                              ),
+                                  fontSize: 13.0,
+                                  height: 1.2,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.mentalBrandColor,
+                                ),
                               ),
                             ),
                           ],
@@ -162,5 +186,3 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
     );
   }
 }
-
-

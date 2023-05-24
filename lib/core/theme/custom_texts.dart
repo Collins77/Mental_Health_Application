@@ -11,4 +11,22 @@ class CustomText {
   static const String onboardScreen3Text1 = 'Get to know your fears';
   static const String onboardScreen3Text2 = ' and learn how to overcome them';
   static const String onboardScreenBtn2 = 'Next';
+  static const String mentalSignInText = 'Sign In';
+  static const String mentalForgotPassword = 'Forgot password?';
+  static const String mentalSocialSignUpText = 'or sign in with';
+  static const String mentalSignInNoAcctText = 'Don\'t have an account?';
+  static const String mentalSignUpText = ' Sign Up';
+}
+
+class CustomErrorText {
+  CustomErrorText._();
+
+  static const String invalidEmail = 'Please enter valid email';
+  static const String invalidPassword = 'Invalid password';
+  static const String invalidConfirmPassword = 'Invalid confirm password';
+  static const String invalidName = 'Invalid name';
+  static const String invalidPhone = 'Invalid phone';
+  static const String invalidAge = 'Invalid age';
+  static const String invalidGender = 'Invalid Gender';
+
 }

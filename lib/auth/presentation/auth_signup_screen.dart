@@ -8,14 +8,14 @@ import 'package:mental_health_app/uis/custom_text.dart';
 import 'package:mental_health_app/uis/spacing.dart';
 import 'package:mental_health_app/utils/focus_helper.dart';
 
-class AuthLoginScreen extends StatefulWidget {
-  const AuthLoginScreen({Key? key}) : super(key: key);
+class AuthSignUpScreen extends StatefulWidget {
+  const AuthSignUpScreen({super.key});
 
   @override
-  State<AuthLoginScreen> createState() => _AuthLoginScreenState();
+  State<AuthSignUpScreen> createState() => _AuthSignUpScreenState();
 }
 
-class _AuthLoginScreenState extends State<AuthLoginScreen> {
+class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
@@ -32,7 +32,6 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
     passwordController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

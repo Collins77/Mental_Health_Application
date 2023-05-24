@@ -61,10 +61,14 @@ class CustomCirclerBtn extends StatelessWidget {
           backgroundColor: AppColors.mentalBrandColor,
           radius: bagroundRadius,
           child: CircleAvatar(
+            backgroundColor: AppColors.mentalBrandLightColor,
             radius: redus,
             child: Image.asset(
               'assets/images/$imgName.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
+              height: 19.0,
+              width: 19.0,
+              color: AppColors.mentalBrandColor,
             ),
           ),
         ),

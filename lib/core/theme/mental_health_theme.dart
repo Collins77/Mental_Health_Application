@@ -17,6 +17,20 @@ UnderlineInputBorder _buildBorder(Color color) {
   }
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: EdgeInsets.all(8),
+      floatingLabelBehavior: FloatingLabelBehavior.auto,
+      enabledBorder: _buildBorder(AppColors.mentalOnboardTextColor),
+      errorBorder: _buildBorder(Colors.red),
+      focusedBorder: _buildBorder(AppColors.mentalBrandColor),
+      disabledBorder: _buildBorder(AppColors.mentalOnboardTextColor),
+      errorStyle: _builtTextStyle(Colors.red),
+      labelStyle: _builtTextStyle(AppColors.mentalOnboardTextColor),
+      helperStyle: _builtTextStyle(AppColors.mentalOnboardTextColor),
+      hintStyle: _builtTextStyle(AppColors.mentalOnboardTextColor),
+      prefixStyle: _builtTextStyle(AppColors.mentalOnboardTextColor),
+    ),
+    backgroundColor: AppColors.mentalDarkThemeColor,
     scaffoldBackgroundColor: AppColors.mentalDarkThemeColor,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.mentalDarkThemeColor,
@@ -92,6 +106,7 @@ ThemeData buildLightTheme() {
       hintStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
       prefixStyle: _buildTextStyle(AppColors.mentalOnboardTextColor),
     ),
+    backgroundColor: AppColors.mentalBrandLightColor,
     scaffoldBackgroundColor: AppColors.mentalBrandLightColor,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.mentalBrandLightColor,

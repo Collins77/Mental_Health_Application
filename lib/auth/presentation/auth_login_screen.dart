@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
+import 'package:mental_health_app/uis/custom_buttons.dart';
 import 'package:mental_health_app/uis/custom_input_fields.dart';
 import 'package:mental_health_app/uis/custom_text.dart';
 import 'package:mental_health_app/uis/spacing.dart';
@@ -48,7 +49,22 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                             return null;
                           },
                         ),
-                        // CustomInputTextField(),
+                        CustomInputPassword(
+                          // controller: _passwordController,
+                          keyboardType: TextInputType.text,
+                          obscuringCharacter: "*",
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
+                              return "Please enter password";
+                            }
+                            return null;
+                          },
+                        ),
+                        customSizedBox(context: context, size: 0.1),
+                        CustomBtn(
+                          onPressed: () => {}, 
+                          buttonText: 'Sign In',
+                          )
                       ],
                     ),
                   )

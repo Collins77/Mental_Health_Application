@@ -38,12 +38,81 @@ class CustomInputTextField extends StatelessWidget {
   }
 }
 
-class CustomInputPassword extends StatelessWidget {
-  const CustomInputPassword({Key? key}) : super(key: key);
+class CustomInputPassword extends StatefulWidget {
+  final TextEditingController? controller;
+  final TextInputType? keyboardType;
+  final String obscuringCharacter;
+  final String? Function(String?)? validator;
+  final List<TextInputFormatter>? inputformatters;
+  const CustomInputPassword(
+      {super.key,
+      this.controller,
+      required this.keyboardType,
+      required this.obscuringCharacter,
+      this.validator,
+      this.inputformatters});
+
+  @override
+  State<CustomInputPassword> createState() => _CustomInputPasswordState();
+}
+
+class _CustomInputPasswordState extends State<CustomInputPassword> {
+  late AnimateIconController animateCon;
+
+  bool obscureText = true;
+
+  @override
+  void initState() {
+    super.initState();
+    animateCon = AnimateIconController();
+  }
 
   @override
   Widget build(BuildContext context) {
-    
+    return Stack(
+      children: [
+        Positioned(
+          child: TextFormField(
+            style: TextStyle(
+              color: AppColors.mentalDarkColor,
+            ),
+            controller: widget.controller,
+            keyboardType: widget.keyboardType,
+            obscureText: true,
+            validator: widget.validator,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            obscuringCharacter: widget.obscuringCharacter,
+          ),
+        ),
+        Positioned(
+          top: 3.0,
+          left: 300.0,
+          child: SizedBox(
+            child: AnimateIcons(
+              startIcon: Icons.visibility_off,
+              endIcon: Icons.visibility,
+              size: 28.0,
+              controller: animateCon,
+              onStartIconPress: () {
+                setState(() {
+                  obscureText = false;
+                });
+                return true;
+              },
+              onEndIconPress: () {
+                setState(() {
+                  obscureText = true;
+                });
+                return true;
+              },
+              duration: const Duration(milliseconds: 500),
+              startIconColor: AppColors.mentalOnboardTextColor,
+              endIconColor: AppColors.mentalBrandColor,
+              clockwise: false,
+            ),
+          ),
+        )
+      ],
+    );
+  }
 }
-
-Stateful

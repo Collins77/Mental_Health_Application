@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
 import 'package:mental_health_app/core/theme/brand_images.dart';
 import 'package:mental_health_app/core/theme/custom_texts.dart';
@@ -85,7 +86,7 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () => Get.toNamed('/forgot-password'),
                               child: Text(
                                 CustomText.mentalForgotPassword,
                                 textAlign: TextAlign.right,
@@ -160,7 +161,7 @@ class _AuthLoginScreenState extends State<AuthLoginScreen> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () => Get.toNamed('/signup'),
                               child: Text(
                                 CustomText.mentalSignUpText,
                                 style: TextStyle(

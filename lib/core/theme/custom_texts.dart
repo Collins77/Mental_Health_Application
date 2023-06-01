@@ -14,8 +14,16 @@ class CustomText {
   static const String mentalSignInText = 'Sign In';
   static const String mentalForgotPassword = 'Forgot password?';
   static const String mentalSocialSignUpText = 'or sign in with';
+  static const String mentalSocialSignInText = 'or sign up with';
   static const String mentalSignInNoAcctText = 'Don\'t have an account?';
   static const String mentalSignUpText = ' Sign Up';
+  static const String mentalSignUpHaveAccText = ' Already have an account?';
+  static const String mentalPasswordResetText = ' Password recovery';
+  static const String mentalPasswordResetSubText = 'Enter the email provided upon registration - we will send you a password recovery link';
+  static const String mentalPasswordResetBtnText = 'Send';
+  static const String mentalPasswordResetReturnText = ' Return';
+  static const String mentalPasswordResetBottomText = 'I remembered the password: ';
+  
 }
 
 class CustomErrorText {

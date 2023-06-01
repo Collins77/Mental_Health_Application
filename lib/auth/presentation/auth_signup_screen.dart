@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mental_health_app/core/theme/app_colors.dart';
 import 'package:mental_health_app/core/theme/brand_images.dart';
 import 'package:mental_health_app/core/theme/custom_texts.dart';
@@ -50,11 +51,12 @@ class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
                 children: [
                   customSizedBox(context: context, size: 0.15),
                   mainHeading(
-                    text: CustomText.mentalSignInText,
+                    text: CustomText.mentalSignUpText,
                     context: context,
                   ),
                   customSizedBox(context: context, size: 0.04),
                   Form(
+                    // key: GlobalKey<FormState>(),
                     child: Column(
                       children: [
                         CustomInputTextField(
@@ -79,30 +81,11 @@ class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
                             return null;
                           },
                         ),
-                        customSizedBox(context: context, size: 0.02),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                CustomText.mentalForgotPassword,
-                                textAlign: TextAlign.right,
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  height: 1.2,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w200,
-                                  color: AppColors.mentalDarkColor,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        
                         customSizedBox(context: context, size: 0.1),
                         CustomBtn(
                           onPressed: () => {},
-                          buttonText: CustomText.mentalSignInText,
+                          buttonText: CustomText.mentalSignUpText,
                         ),
                         customSizedBox(context: context, size: 0.13),
                         Column(
@@ -110,7 +93,7 @@ class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              CustomText.mentalSocialSignUpText,
+                              CustomText.mentalSocialSignInText,
                               style: TextStyle(
                                 fontSize: 15.0,
                                 height: 1.2,
@@ -149,7 +132,7 @@ class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              CustomText.mentalSignInNoAcctText,
+                              CustomText.mentalSignUpHaveAccText,
                               style: TextStyle(
                                 fontSize: 13.0,
                                 height: 1.2,
@@ -159,9 +142,9 @@ class _AuthSignUpScreenState extends State<AuthSignUpScreen> {
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () => Get.toNamed('/login'),
                               child: Text(
-                                CustomText.mentalSignUpText,
+                                CustomText.mentalSignInText,
                                 style: TextStyle(
                                   fontSize: 13.0,
                                   height: 1.2,
